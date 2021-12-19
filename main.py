@@ -37,18 +37,22 @@ def deCipher(word:str,key:int)->str:
         #print(newLett-65)
         scrambledWord += chr(newLett)
     return scrambledWord
+    
+def main():
+    #Obtain input
+    print("Cipher: ")
+    print("Would you like to use a Cipher(1) or Decipher(2): ")
+    option = input()
+    if(option == "1" or option == "Cipher"):
+        word = input("Please enter the word: ")
+        key = int(input("Please enter the key: "))
+        print(f"The new word is: {cipher(word,key)}")
+    elif(option == "2" or option == "Decipher"):
+        word = input("Please enter the word: ")
+        key = int(input("Please enter the key: "))
+        print(f"The new word is: {deCipher(word,key)}")
+    else:
+        print("I'm not sure what you entered")
 
-#Obtain input
-print("Cipher: ")
-print("Would you like to use a Cipher(1) or Decipher(2): ")
-option = input()
-if(option == "1" or option == "Cipher"):
-    word = input("Please enter the word: ")
-    key = int(input("Please enter the key: "))
-    print(f"The new word is: {cipher(word,key)}")
-elif(option == "2" or option == "Decipher"):
-    word = input("Please enter the word: ")
-    key = int(input("Please enter the key: "))
-    print(f"The new word is: {deCipher(word,key)}")
-else:
-    print("I'm not sure what you entered")
+if __name__ == "__main__":
+    main()
