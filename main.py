@@ -1,21 +1,44 @@
 def cipher(word:str,key:int)->str:
-  scrambledWord = ""
-  for lett in word:
-    newLett = ord(lett)
-    newLett = ((newLett + key-65)%26+65)
-    #print(newLett-65)
-    scrambledWord += chr(newLett)
-  return scrambledWord
+    """cipher function
+
+    The cipher function will encode the given word using the given key
+
+    Args:
+        word (str): the string word or phrase
+        key (int): the key that will shift the word
+
+    Returns:
+        str: the new scrambledWord
+    """
+    scrambledWord = ""
+    for lett in word:
+        newLett = ord(lett)
+        newLett = ((newLett + key-65)%26+65)
+        #print(newLett-65)
+        scrambledWord += chr(newLett)
+    return scrambledWord
 
 def deCipher(word:str,key:int)->str:
-  scrambledWord = ""
-  for lett in word:
-    newLett = ord(lett)
-    newLett = ((newLett - key-65)%26+65)
-    #print(newLett-65)
-    scrambledWord += chr(newLett)
-  return scrambledWord
+    """deCipher function
 
+    The decipher function will decode the given word using the given key
+
+    Args:
+        word (str): the string word or phrase
+        key (int): the key that will shift the word
+
+    Returns:
+        str: the new scrambledWord
+    """
+    scrambledWord = ""
+    for lett in word:
+        newLett = ord(lett)
+        newLett = ((newLett - key-65)%26+65)
+        #print(newLett-65)
+        scrambledWord += chr(newLett)
+    return scrambledWord
+
+#Obtain input
 print("Cipher: ")
 print("Would you like to use a Cipher(1) or Decipher(2): ")
 option = input()
